@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+body{
+background-color: burlywood;
+}
+
+input[name="customnum"]{
+width:30px;
+}
+
+input[name="para1"]{
+width:30px;
+}
+
+input[name="para2"]{
+width:30px;
+}
+
+input[name="para3"]{
+width:30px;
+}
+
+input[name="para4"]{
+width:30px;
+}
+
+input[name="para5"]{
+width:30px;
+}
+
+input[name="para6"]{
+width:30px;
+}
+
+input[name="para7"]{
+width:30px;
+}
+
+input[name="para8"]{
+width:30px;
+}
+
+input[name="mult20"]{
+width:30px;
+margin-left:11px;
+}
+
+input[name="mult12"]{
+width:30px;
+margin-left:11px;
+}
+
+input[name="mult10"]{
+width:30px;
+margin-left:11px;
+}
+
+input[name="mult100"]{
+width:30px;
+margin-left:3px;
+}
+
+input[name="mult8"]{
+width:30px;
+margin-left:19px;
+}
+
+input[name="mult6"]{
+width:30px;
+margin-left:19px;
+}
+
+input[name="mult4"]{
+width:30px;
+margin-left:19px;
+}
+
+input[name="multcustom"]{
+width:30px;
+margin-left:1px;
+}
+
+input[name="d20+-"]{
+width:30px;
+}
+
+input[name="d12+-"]{
+width:30px;
+}
+
+input[name="d100+-"]{
+width:30px;
+}
+
+input[name="d10+-"]{
+width:30px;
+}
+
+input[name="d8+-"]{
+width:30px;
+}
+
+input[name="d6+-"]{
+width:30px;
+}
+
+input[name="d4+-"]{
+width:30px;
+}
+
+input[name="dcustom+-"]{
+width:30px;
+}
+
+label[name="NumberLabel"]{
+margin-left: 21px;
+}
+
+label[name="ModLabel"]{
+margin-left: 67px;
+}
+
+label[name="ResultLabel"]{
+margin-left: 33px;
+}
+
+input[name = "resultpara"]{
+height = 500px;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+<label>Die</label>
+<label name="NumberLabel">Nbr</label>
+<label name="ModLabel">Modifier</label>
+<label name="ResultLabel">Results</label>
+
+<br>
+
+<label>D4</label>
+<input type="text" name="mult4" id="mult4" value="1">
+<label>+</label>
+<input type="radio" name="+-6" id="d4+" value="+" checked="True">
+<label>-</label>
+<input type="radio" name="+-6" id="d4-" value="-">
+<input type="text" name="d4+-" id="d4+-" value="0">
+<button onclick ="randomNum4()">Roll</button>
+<input type="text" name="para6" id="para6">
+
+<br>
+<br>
+
+<label>D6</label>
+<input type="text" name="mult6" id="mult6" value="1">
+<label>+</label>
+<input type="radio" name="+-5" id="d6+" value="+" checked="True">
+<label>-</label>
+<input type="radio" name="+-5" id="d6-" value="-">
+<input type="text" name="d6+-" id="d6+-" value="0">
+<button onclick ="randomNum6()">Roll</button>
+<input type="text" name="para5" id="para5">
+
+<br>
+<br>
+
+<label>D8</label>
+<input type="text" name="mult8" id="mult8" value="1">
+<label>+</label>
+<input type="radio" name="+-4" id="d8+" value="+" checked="True">
+<label>-</label>
+<input type="radio" name="+-4" id="d8-" value="-">
+<input type="text" name="d8+-" id="d8+-" value="0">
+<button onclick ="randomNum8()">Roll</button>
+<input type="text" name="para4" id="para4">
+
+<br>
+<br>
+
+<label>D10</label>
+<input type="text" name="mult10" id="mult10" value="1">
+<label>+</label>
+<input type="radio" name="+-3" id="d10+" value="+" checked="True">
+<label>-</label>
+<input type="radio" name="+-3" id="d10-" value="-">
+<input type="text" name="d10+-" id="d10+-" value="0">
+<button onclick ="randomNum10()">Roll</button>
+<input type="text" name="para3" id="para3">
+
+<br>
+<br>
+
+<label>D100</label>
+<input type="text" name="mult100" id="mult100" value="1">
+<label>+</label>
+<input type="radio" name="+-8" id="d100+" value="+" checked="True">
+<label>-</label>
+<input type="radio" name="+-8" id="d100-" value="-">
+<input type="text" name="d100+-" id="d100+-" value="0">
+<button onclick ="randomNum100()">Roll</button>
+<input type="text" name="para8" id="para8">
+
+<br>
+<br>
+
+<label>D12</label>
+<input type="text" name="mult12" id="mult12" value="1">
+<label>+</label>
+<input type="radio" name="+-2" id="d12+" value="+" checked="True">
+<label>-</label>
+<input type="radio" name="+-2" id="d12-" value="-">
+<input type="text" name="d12+-" id="d12+-" value="0">
+<button onclick ="randomNum12()">Roll</button>
+<input type="text" name="para2" id="para2">
+
+<br>
+<br>
+
+<label>D20</label>
+<input type="text" name="mult20" id="mult20" value="1">
+<label>+</label>
+<input type="radio" name="+-1" id="d20+" value="+" checked="True">
+<label>-</label>
+<input type="radio" name="+-1" id="d20-" value="-">
+<input type="text" name="d20+-" id="d20+-" value="0">
+<button name="button20" onclick ="randomNum20()">Roll</button>
+<input type="text" name="para1" id="para1">
+
+<br>
+<br>
+
+<input type="text" name="customnum" id="customnum" value="1">
+<input type="text" name="multcustom" id="multcustom" value="1">
+<label>+</label>
+<input type="radio" name="+-custom" id="dcustom+" value="+" checked="True">
+<label>-</label>
+<input type="radio" name="+-custom" id="dcustom-" value="-">
+<input type="text" name="dcustom+-" id="dcustom+-" value="0">
+<button onclick ="randomNumCustom()">Roll</button>
+<input type="text" name="para7" id="para7">
+
+<br>
+<br>
+
+<textarea name="resultpara" id="resultpara" rows="5"></textarea>
+
+<button onclick = "reset()">Reset</button>
+
+
+
+
+
+
+
+
+
+
+<script>
+function randomNum20(){
+var Text = document.getElementById("d20+-").value
+var RanNum = Math.ceil(Math.random() *20)
+var sum = 0
+var times = parseInt(document.getElementById("mult20").value)
+var List = RanNum + ", "
+
+if (document.getElementById(id="d20+").checked){
+	sum = sum + parseInt(Text);}
+else if (document.getElementById(id="d20-").checked){
+	sum = sum - parseInt(Text);}
+
+for(let i = 0; i < times; i++)
+{
+	document.getElementById("para1").value = RanNum
+	sum = sum + RanNum
+	if(i > 0){
+		List = List + RanNum + ", "
+	}
+	RanNum = Math.ceil(Math.random() *20)
+}
+
+document.getElementById("resultpara").value = "Total: " + sum + '\r\n' + document.getElementById("resultpara").value
+
+document.getElementById("resultpara").value = List + '\r\n' + document.getElementById("resultpara").value
+
+if (document.getElementById(id="d20+").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d20)+" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+else if (document.getElementById(id="d20-").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d20)-" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+
+}
+</script>
+
+
+
+
+<script>
+function randomNum12(){
+var Text = document.getElementById("d12+-").value
+var RanNum = Math.ceil(Math.random() *12)
+var sum = 0
+var times = parseInt(document.getElementById("mult12").value)
+var List = RanNum + ", "
+
+if (document.getElementById(id="d12+").checked){
+	sum = sum + parseInt(Text);}
+else if (document.getElementById(id="d12-").checked){
+	sum = sum - parseInt(Text);}
+
+for(let i = 0; i < times; i++)
+{
+	document.getElementById("para2").value = RanNum
+	sum = sum + RanNum
+	if(i > 0){
+		List = List + RanNum + ", "
+	}
+	RanNum = Math.ceil(Math.random() *12)
+}
+
+document.getElementById("resultpara").value = "Total: " + sum + '\r\n' + document.getElementById("resultpara").value
+
+document.getElementById("resultpara").value = List + '\r\n' + document.getElementById("resultpara").value
+
+if (document.getElementById(id="d12+").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d12)+" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+else if (document.getElementById(id="d12-").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d12)-" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+
+}
+</script>
+
+
+
+
+
+<script>
+function randomNum10(){
+var Text = document.getElementById("d10+-").value
+var RanNum = Math.ceil(Math.random() *10)
+var sum = 0
+var times = parseInt(document.getElementById("mult10").value)
+var List = RanNum + ", "
+
+if (document.getElementById(id="d10+").checked){
+	sum = sum + parseInt(Text);}
+else if (document.getElementById(id="d10-").checked){
+	sum = sum - parseInt(Text);}
+
+for(let i = 0; i < times; i++)
+{
+	document.getElementById("para3").value = RanNum
+	sum = sum + RanNum
+	if(i > 0){
+		List = List + RanNum + ", "
+	}
+	RanNum = Math.ceil(Math.random() *10)
+}
+
+document.getElementById("resultpara").value = "Total: " + sum + '\r\n' + document.getElementById("resultpara").value
+
+document.getElementById("resultpara").value = List + '\r\n' + document.getElementById("resultpara").value
+
+if (document.getElementById(id="d10+").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d10)+" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+else if (document.getElementById(id="d10-").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d10)-" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+
+}
+</script>
+
+
+
+
+
+<script>
+function randomNum100(){
+var Text = document.getElementById("d100+-").value
+var RanNum = Math.ceil(Math.random() *100)
+var sum = 0
+var times = parseInt(document.getElementById("mult100").value)
+var List = RanNum + ", "
+
+if (document.getElementById(id="d100+").checked){
+	sum = sum + parseInt(Text);}
+else if (document.getElementById(id="d100-").checked){
+	sum = sum - parseInt(Text);}
+
+for(let i = 0; i < times; i++)
+{
+	document.getElementById("para8").value = RanNum
+	sum = sum + RanNum
+	if(i > 0){
+		List = List + RanNum + ", "
+	}
+	RanNum = Math.ceil(Math.random() *100)
+}
+
+document.getElementById("resultpara").value = "Total: " + sum + '\r\n' + document.getElementById("resultpara").value
+
+document.getElementById("resultpara").value = List + '\r\n' + document.getElementById("resultpara").value
+
+if (document.getElementById(id="d100+").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d100)+" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+else if (document.getElementById(id="d100-").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d100)-" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+
+}
+</script>
+
+
+
+
+
+<script>
+function randomNum8(){
+var Text = document.getElementById("d8+-").value
+var RanNum = Math.ceil(Math.random() *8)
+var sum = 0
+var times = parseInt(document.getElementById("mult8").value)
+var List = RanNum + ", "
+
+if (document.getElementById(id="d8+").checked){
+	sum = sum + parseInt(Text);}
+else if (document.getElementById(id="d8-").checked){
+	sum = sum - parseInt(Text);}
+
+for(let i = 0; i < times; i++)
+{
+	document.getElementById("para4").value = RanNum
+	sum = sum + RanNum
+	if(i > 0){
+		List = List + RanNum + ", "
+	}
+	RanNum = Math.ceil(Math.random() *8)
+}
+
+document.getElementById("resultpara").value = "Total: " + sum + '\r\n' + document.getElementById("resultpara").value
+
+document.getElementById("resultpara").value = List + '\r\n' + document.getElementById("resultpara").value
+
+if (document.getElementById(id="d8+").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d8)+" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+else if (document.getElementById(id="d8-").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d8)-" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+
+}
+</script>
+
+
+
+
+
+
+
+
+<script>
+function randomNum6(){
+var Text = document.getElementById("d6+-").value
+var RanNum = Math.ceil(Math.random() *6)
+var sum = 0
+var times = parseInt(document.getElementById("mult6").value)
+var List = RanNum + ", "
+
+if (document.getElementById(id="d6+").checked){
+	sum = sum + parseInt(Text);}
+else if (document.getElementById(id="d6-").checked){
+	sum = sum - parseInt(Text);}
+
+for(let i = 0; i < times; i++)
+{
+	document.getElementById("para5").value = RanNum
+	sum = sum + RanNum
+	if(i > 0){
+		List = List + RanNum + ", "
+	}
+	RanNum = Math.ceil(Math.random() *6)
+}
+
+document.getElementById("resultpara").value = "Total: " + sum + '\r\n' + document.getElementById("resultpara").value
+
+document.getElementById("resultpara").value = List + '\r\n' + document.getElementById("resultpara").value
+
+if (document.getElementById(id="d6+").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d6)+" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+else if (document.getElementById(id="d6-").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d6)-" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+
+}
+</script>
+
+
+
+
+
+<script>
+function randomNum4(){
+var Text = document.getElementById("d4+-").value
+var RanNum = Math.ceil(Math.random() *4)
+var sum = 0
+var times = parseInt(document.getElementById("mult4").value)
+var List = RanNum + ", "
+
+if (document.getElementById(id="d4+").checked){
+	sum = sum + parseInt(Text);}
+else if (document.getElementById(id="d4-").checked){
+	sum = sum - parseInt(Text);}
+
+for(let i = 0; i < times; i++)
+{
+	document.getElementById("para6").value = RanNum
+	sum = sum + RanNum
+	if(i > 0){
+		List = List + RanNum + ", "
+	}
+	RanNum = Math.ceil(Math.random() *4)
+}
+
+document.getElementById("resultpara").value = "Total: " + sum + '\r\n' + document.getElementById("resultpara").value
+
+document.getElementById("resultpara").value = List + '\r\n' + document.getElementById("resultpara").value
+
+if (document.getElementById(id="d4+").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d4)+" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+else if (document.getElementById(id="d4-").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d4)-" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+
+}
+</script>
+
+
+
+
+<script>
+function randomNumCustom(){
+var Text = document.getElementById("dcustom+-").value
+var CustomNum = parseInt(document.getElementById("customnum").value)
+var RanNum = Math.ceil(Math.random() *CustomNum)
+var sum = 0
+var times = parseInt(document.getElementById("multcustom").value)
+var List = RanNum + ", "
+
+if (document.getElementById(id="dcustom+").checked){
+	sum = sum + parseInt(Text);}
+else if (document.getElementById(id="dcustom-").checked){
+	sum = sum - parseInt(Text);}
+
+for(let i = 0; i < times; i++)
+{
+	document.getElementById("para7").value = RanNum
+	sum = sum + RanNum
+	if(i > 0){
+		List = List + RanNum + ", "
+	}
+	RanNum = Math.ceil(Math.random() *CustomNum)
+}
+
+document.getElementById("resultpara").value = "Total: " + sum + '\r\n' + document.getElementById("resultpara").value
+
+document.getElementById("resultpara").value = List + '\r\n' + document.getElementById("resultpara").value
+
+if (document.getElementById(id="dcustom+").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d" + CustomNum + ")+" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+else if (document.getElementById(id="dcustom-").checked){
+	document.getElementById("resultpara").value = "Roll(" + times + "d" + CustomNum + ")-" + Text + ":" + '\r\n' + document.getElementById("resultpara").value
+}
+
+}
+</script>
+
+
+
+
+
+<script>
+function reset(){
+document.getElementById("resultpara").value = ""
+}
+</script>
+
+</body>
+</html>
